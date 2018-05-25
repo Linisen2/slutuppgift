@@ -31,14 +31,10 @@ ul {
 }
 /* Mobile layout */
 body {
-    background-color: #edfbff;
+    background-color: #d1ebf2;
 }
-.container {}
 header {
     background-color: #e5a3da;
-}
-.content {
-    width: 100%;
 }
 header a {
     text-decoration: none;
@@ -63,26 +59,17 @@ h4 {
     font-size: 30px;
     font-family: 'Patrick Hand SC', cursive;
 }
-p,
-li {
+p, li {
     font-family: 'Noto Serif', serif;
 }
-.portfolio {}
 .portfolio img {
     width: 95%;
     display: block;
     margin: 10px auto;
 }
-.r1 {
+.r1, .portrow1, .r2, .portrow2, .r3, .portrow3 {
     width: 100%;
 }
-.r2 {
-    width: 100%;
-}
-.r3 {
-    width: 100%;
-}
-.info {}
 .info img {
     width: 95%;
 }
@@ -106,12 +93,11 @@ li {
     padding: 20px;
     text-align: center;
 }
-.prices li,
-ul {
-    text-decoration: none;
-}
-.simple {}
-.simple img {
+.prices ul{
+        list-style: none;
+    
+    }
+.simple img{
     width: 99%;
     display: block;
     margin: 0 auto;
@@ -119,22 +105,148 @@ ul {
 .illu {
     width: 99%;
 }
-.about {}
-form {}
-label {}
-input {}
-textarea {
-    width: 400px;
-    height: 250px;
+.about{
+    padding: 10px;
 }
-button {}
+.about p{
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    text-align: center;
+    
+}
+.about iframe{
+    height: 300px;
+    width: 100%;
+    display: block;
+    margin: auto;
+}
+form{
+    display: block;
+    font-family: 'Patrick Hand SC', cursive;
+    padding: 20px;
+}
+.conimg img{
+    width: 90%;
+}
+input[type=text],input[type=email], select, textarea {
+    width: 97%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+input[type=checkbox]{
+    width: 30px;
+    height: 30px;
+}
+label {
+    font-weight: bold;
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+    font-size: 30px;
+}
+
+input[type=submit] {
+    width: 50%;
+    background-color: #eac3eb;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+textarea{
+    height: 200px;
+}
+input[type=submit]:hover {
+    background-color: #e5a3da;
+}
 footer {
     border-top: solid 1px #000;
     padding: 20px;
     text-align: center;
+    background-color: #d6e3ff;
+}
+footer a img{
+    margin: 0 10px;
+    width: 35px;
 }
 
 /* Desktop layout */
+
+@media only screen and (min-width: 800px) {
+    .portrow1, .portrow2, .portrow3{
+        width: 30%;
+        margin: 0 auto;
+    }
+    .r1, .r2{
+        width: 50%;
+    }
+    .portfolio{
+        background-color: #feebff;
+        padding: 20px;
+        border-radius: 15px;
+        margin-bottom: 20px;
+    }
+    .flex{
+        display: flex;
+        flex-direction: row;
+    }
+    .prices, .priceinfo, .twislider{
+        width: 80%;
+        margin: 75px auto;
+        background-color: rgba(254, 242, 255, 0.5);
+        padding: 20px;
+        border-radius: 40px;
+        border: 3px solid #fff;
+    }
+    .info{
+        padding: 20px 50px;
+    }
+    .prices article{
+        width: 50%;
+    }
+    .prices figure{
+        width: 50%;
+    }
+    .prices ul{
+        list-style: none;
+        margin: 10px 0;
+    }
+    .simple h4{
+        margin: 20px 0;
+    }
+    .simple img{
+        width: 70%;
+    }
+    .illu figure{
+        width: 50%;
+        margin: auto;
+    }
+    .about{
+        margin: auto;
+        width: 85%;
+    }
+    .about iframe{
+    height: 500px;
+    width: 100%;
+    }
+    .contact{
+        margin: auto;
+        width: 90%;
+    }
+    .conimg img{
+    width: 100%;
+    padding: 20px;
+    margin: auto;
+        
+    }
+    footer a img{
+    margin: 0 10px;
+    width: 55px;
+    }
+}
+
 
 /* Navigation */
 
@@ -197,7 +309,8 @@ footer {
     display: block;
 }
 
-@media screen and (max-width: 600px) {
+/* Media querries for nav and form */
+@media screen and (max-width: 800px) {
   .topnav a:not(:first-child), .dropdown .dropbtn {
     display: none;
   }
@@ -207,7 +320,7 @@ footer {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive .icon {
     position: absolute;
@@ -228,127 +341,9 @@ footer {
   }
 }
 
-/* Slider */
-
-.slick-slider {
-    position: relative;
-    display: block;
-    box-sizing: border-box;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-touch-callout: none;
-    -khtml-user-select: none;
-    -ms-touch-action: pan-y;
-    touch-action: pan-y;
-    -webkit-tap-highlight-color: transparent;
-}
-.slick-list {
-    position: relative;
-    display: block;
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-}
-.slick-list:focus {
-    outline: none;
-}
-.slick-list.dragging {
-    cursor: pointer;
-    cursor: hand;
-}
-.slick-slider .slick-track,
-.slick-slider .slick-list {
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    -ms-transform: translate3d(0, 0, 0);
-    -o-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-}
-.slick-track {
-    position: relative;
-    top: 0;
-    left: 0;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-.slick-track:before,
-.slick-track:after {
-    display: table;
-    content: '';
-}
-.slick-track:after {
-    clear: both;
-}
-.slick-loading .slick-track {
-    visibility: hidden;
-}
-.slick-slide {
-    display: none;
-    float: left;
-    height: 100%;
-    min-height: 1px;
-}
-[dir='rtl'] .slick-slide {
-    float: right;
-}
-.slick-slide img {
-    display: block;
-}
-.slick-slide.slick-loading img {
-    display: none;
-}
-.slick-slide.dragging img {
-    pointer-events: none;
-}
-.slick-initialized .slick-slide {
-    display: block;
-}
-.slick-loading .slick-slide {
-    visibility: hidden;
-}
-.slick-vertical .slick-slide {
-    display: block;
-    height: auto;
-    border: 1px solid transparent;
-}
-.slick-arrow.slick-hidden {
-    display: none;
-}
-
- html, body {
-      margin: 0;
-      padding: 0;
+@media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
     }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    .slider {
-        width: 95%;
-        margin: 50px auto;
-    }
-
-    .slick-slide {
-      margin: 0px 20px;
-    }
-
-    .slick-slide img {
-      width: 100%;
-    }
-
-    .slick-slide {
-      transition: all ease-in-out .3s;
-      opacity: .2;
-    }
-
-    .slick-active {
-      opacity: .5;
-    }
-
-    .slick-current {
-      opacity: 1;
-    }
+}
