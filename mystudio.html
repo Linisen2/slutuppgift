@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Place Autocomplete</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style/generic.css">
+    <link rel="stylesheet" href="style/map.css">
+</head>
+
+<body>
+    <header>
+        <a href="index.html"><h1>Linisen</h1></a>
+        <nav class="topnav" id="myTopnav">
+            <a href="index.html">Home</a>
+            <a href="cominfo.html">Commission Information</a>
+            <div class="dropdown">
+                <button class="dropbtn">Prices</button>
+                <div class="dropdown-content">
+                    <a href="illustrations.html">Illustrations</a>
+                    <a href="twitch.html">Twtich</a>
+                </div>
+            </div>
+            <a href="about.html">About</a>
+            <a href="contact.php">Contact</a>
+            <a href="mystudio.html">My Art Studio</a>
+            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+        </nav>
+    </header>
+
+    <body>
+        <div id="map"></div>
+        <script>
+            function initMap() {
+                var myLatLng = {
+                    lat: 59.241441,
+                    lng: 18.502330
+                };
+
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 14,
+                    center: myLatLng
+                });
+
+                var marker = new google.maps.Marker({
+                    position: myLatLng,
+                    map: map,
+                    title: 'My Art Studio'
+                });
+            }
+
+        </script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?&callback=initMap">
+
+
+        </script>
+        <footer>
+            <a href="http://www.twitch.tv/linisen"><img src="img/social/twitch_logo.png" alt="Social media icon"></a>
+            <a href="https://linisen2.deviantart.com/"><img src="img/social/deviantart_logo.png" alt="Social media icon"></a>
+            <a href="https://www.patreon.com/Linisen"><img src="img/social/patreon_logo.png" alt="Social media icon"></a>
+            <a href="https://twitter.com/Liinisen"><img src="img/social/twitter_logo.png" alt="Social media icon"></a>
+            <a href="https://www.instagram.com/linisen2/"><img src="img/social/instagram_logo.png" alt="Social media icon"></a>
+        </footer>
+    </body>
+
+</html>

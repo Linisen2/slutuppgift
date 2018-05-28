@@ -29,7 +29,9 @@ ul {
     margin: 0;
     padding: 0;
 }
+
 /* Mobile layout */
+
 body {
     background-color: #d1ebf2;
 }
@@ -59,7 +61,8 @@ h4 {
     font-size: 30px;
     font-family: 'Patrick Hand SC', cursive;
 }
-p, li {
+p,
+li {
     font-family: 'Noto Serif', serif;
 }
 .portfolio img {
@@ -67,7 +70,12 @@ p, li {
     display: block;
     margin: 10px auto;
 }
-.r1, .portrow1, .r2, .portrow2, .r3, .portrow3 {
+.r1,
+.portrow1,
+.r2,
+.portrow2,
+.r3,
+.portrow3 {
     width: 100%;
 }
 .info img {
@@ -93,11 +101,10 @@ p, li {
     padding: 20px;
     text-align: center;
 }
-.prices ul{
-        list-style: none;
-    
-    }
-.simple img{
+.prices ul {
+    list-style: none;
+}
+.simple img {
     width: 99%;
     display: block;
     margin: 0 auto;
@@ -105,37 +112,39 @@ p, li {
 .illu {
     width: 99%;
 }
-.about{
+.about {
     padding: 10px;
 }
-.about p{
+.about p {
     margin-bottom: 20px;
     font-size: 1.1em;
     text-align: center;
-    
 }
-.about iframe{
+.about iframe {
     height: 300px;
     width: 100%;
     display: block;
-    margin: auto;
+    margin: 10px auto;
 }
-form{
+form {
     display: block;
     font-family: 'Patrick Hand SC', cursive;
     padding: 20px;
 }
-.conimg img{
+.conimg img {
     width: 90%;
 }
-input[type=text],input[type=email], select, textarea {
+input[type=text],
+input[type=email],
+select,
+textarea {
     width: 97%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
     resize: vertical;
 }
-input[type=checkbox]{
+input[type=checkbox] {
     width: 30px;
     height: 30px;
 }
@@ -145,7 +154,6 @@ label {
     display: inline-block;
     font-size: 30px;
 }
-
 input[type=submit] {
     width: 50%;
     background-color: #eac3eb;
@@ -155,7 +163,7 @@ input[type=submit] {
     border-radius: 4px;
     cursor: pointer;
 }
-textarea{
+textarea {
     height: 200px;
 }
 input[type=submit]:hover {
@@ -167,7 +175,7 @@ footer {
     text-align: center;
     background-color: #d6e3ff;
 }
-footer a img{
+footer a img {
     margin: 0 10px;
     width: 35px;
 }
@@ -175,24 +183,29 @@ footer a img{
 /* Desktop layout */
 
 @media only screen and (min-width: 800px) {
-    .portrow1, .portrow2, .portrow3{
+    .portrow1,
+    .portrow2,
+    .portrow3 {
         width: 30%;
         margin: 0 auto;
     }
-    .r1, .r2{
+    .r1,
+    .r2 {
         width: 50%;
     }
-    .portfolio{
+    .portfolio {
         background-color: #feebff;
         padding: 20px;
         border-radius: 15px;
         margin-bottom: 20px;
     }
-    .flex{
+    .flex {
         display: flex;
         flex-direction: row;
     }
-    .prices, .priceinfo, .twislider{
+    .prices,
+    .priceinfo,
+    .twislider {
         width: 80%;
         margin: 75px auto;
         background-color: rgba(254, 242, 255, 0.5);
@@ -200,53 +213,62 @@ footer a img{
         border-radius: 40px;
         border: 3px solid #fff;
     }
-    .info{
+    .info {
         padding: 20px 50px;
     }
-    .prices article{
+    .prices article {
         width: 50%;
     }
-    .prices figure{
+    .prices figure {
         width: 50%;
     }
-    .prices ul{
+    .prices ul {
         list-style: none;
         margin: 10px 0;
     }
-    .simple h4{
+    .simple h4 {
         margin: 20px 0;
     }
-    .simple img{
+    .simple img {
         width: 70%;
     }
-    .illu figure{
+    .illu figure {
         width: 50%;
         margin: auto;
     }
-    .about{
+    .about {
         margin: auto;
         width: 85%;
     }
-    .about iframe{
-    height: 500px;
-    width: 100%;
+    .about iframe {
+        height: 500px;
+        width: 100%;
     }
-    .contact{
+    .contact {
         margin: auto;
         width: 90%;
     }
-    .conimg img{
-    width: 100%;
-    padding: 20px;
-    margin: auto;
-        
+    .conimg img {
+        width: 100%;
+        padding: 20px;
+        margin: auto;
     }
-    footer a img{
-    margin: 0 10px;
-    width: 55px;
+    footer a img {
+        margin: 0 10px;
+        width: 55px;
     }
 }
 
+/* Map */
+ #map {
+    height: 100%;
+}
+      /* Optional: Makes the sample page fill the window. */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
 
 /* Navigation */
 
@@ -302,7 +324,7 @@ footer a img{
     background-color: #efcef0;
 }
 .dropdown-content a:hover {
-    background-color: #efcef0;
+    background-color: #e5a3da;
     color: black;
 }
 .dropdown:hover .dropdown-content {
