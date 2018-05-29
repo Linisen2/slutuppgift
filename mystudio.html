@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="sv">
 
 <head>
-    <title>Place Autocomplete</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
+    <title>Närmsta hållplatser</title>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style/generic.css">
-    <link rel="stylesheet" href="style/map.css">
 </head>
 
 <body>
@@ -28,40 +27,41 @@
             <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
         </nav>
     </header>
-
-    <body>
-        <div id="map"></div>
-        <script>
-            function initMap() {
-                var myLatLng = {
-                    lat: 59.241441,
-                    lng: 18.502330
-                };
-
-                var map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: 14,
-                    center: myLatLng
-                });
-
-                var marker = new google.maps.Marker({
-                    position: myLatLng,
-                    map: map,
-                    title: 'My Art Studio'
-                });
+    <h1>Hållplatser nära dig</h1>
+    <div id="map"></div>
+    <script>
+        $(document).ready(function() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showLocation);
+            } else {
+                $('#map').html('<h1>Kunde inte hitta din geografiska position.</h1>)');
             }
 
-        </script>
-        <script async defer src="https://maps.googleapis.com/maps/api/js?&callback=initMap">
+            // Hämta alla postioner iform av Javascript-kod för Google maps
+            function showLocation(position) {
+                var latitude = position.coords.latitude;
+                var longitude = position.coords.longitude;
+                $.ajax({
+                    type: 'POST',
+                    url: './busstops.php',
+                    data: 'lat=' + latitude + '&lng=' + longitude,
+                    dataType: 'script'
+                });
+            }
+        });
+
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHNO9bd6B1_7SuSg7g7IxWeHtK9uHK3bA">
 
 
-        </script>
-        <footer>
-            <a href="http://www.twitch.tv/linisen"><img src="img/social/twitch_logo.png" alt="Social media icon"></a>
-            <a href="https://linisen2.deviantart.com/"><img src="img/social/deviantart_logo.png" alt="Social media icon"></a>
-            <a href="https://www.patreon.com/Linisen"><img src="img/social/patreon_logo.png" alt="Social media icon"></a>
-            <a href="https://twitter.com/Liinisen"><img src="img/social/twitter_logo.png" alt="Social media icon"></a>
-            <a href="https://www.instagram.com/linisen2/"><img src="img/social/instagram_logo.png" alt="Social media icon"></a>
-        </footer>
-    </body>
+    </script>
+    <footer>
+        <a href="http://www.twitch.tv/linisen"><img src="img/social/twitch_logo.png" alt="Social media icon"></a>
+        <a href="https://linisen2.deviantart.com/"><img src="img/social/deviantart_logo.png" alt="Social media icon"></a>
+        <a href="https://www.patreon.com/Linisen"><img src="img/social/patreon_logo.png" alt="Social media icon"></a>
+        <a href="https://twitter.com/Liinisen"><img src="img/social/twitter_logo.png" alt="Social media icon"></a>
+        <a href="https://www.instagram.com/linisen2/"><img src="img/social/instagram_logo.png" alt="Social media icon"></a>
+    </footer>
+</body>
 
 </html>
