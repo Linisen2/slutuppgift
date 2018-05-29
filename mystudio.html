@@ -30,17 +30,9 @@
     <h1>Hållplatser nära dig</h1>
     <div id="map"></div>
     <script>
-        $(document).ready(function() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(showLocation);
-            } else {
-                $('#map').html('<h1>Kunde inte hitta din geografiska position.</h1>)');
-            }
-
-            // Hämta alla postioner iform av Javascript-kod för Google maps
             function showLocation(position) {
-                var latitude = position.coords.latitude;
-                var longitude = position.coords.longitude;
+                var latitude = 59.241441;
+                var longitude = 18.502330;
                 $.ajax({
                     type: 'POST',
                     url: './busstops.php',

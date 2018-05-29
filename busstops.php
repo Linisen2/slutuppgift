@@ -18,8 +18,8 @@ $SVAR = 50;
 $RADIUS = 1000;
 
 // Ta emot POST-data och validera
-$lat = filter_input(INPUT_POST, "lat", FILTER_SANITIZE_STRING);
-$lng = filter_input(INPUT_POST, "lng", FILTER_SANITIZE_STRING);
+$lat = 59.241441;
+$lng = 18.502330;
 
 if ($lat && $lng) {
 
